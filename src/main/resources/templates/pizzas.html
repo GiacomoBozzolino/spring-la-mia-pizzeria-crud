@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css} "/>
+<title>Insert title here</title>
+</head>
+<body>
+		<div class="container-fluid app-container border border-black">
+		<header th:replace="frags :: header"></header>
+			<main>
+				<div class="container-fluid">
+					<div class="row p-5">
+						<div class="col-12 text-center" th:if="${pizzas.isEmpty()}">
+							<span>Nessun elemento trovato</span>
+						</div>
+						<a class="col-12 btn btn-primary border rounded-pill border-black text-decoration-none text-black text-center fs-5 my-3 py-3" th:each="pizza : ${pizzas}" th:href="@{/pizzas/{pizzaId} (pizzaId=${pizza.getId()})}">
+							<span class="btn btn-info " th:text="${pizza.getNome()}"></span>
+						</a>
+					</div>
+				</div>
+			</main>
+		</div>
+		<!-- Bootstrap Bundle with Popper -->
+ 		<script th:src="@{/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js}"></script>
+	</body>
+</html>

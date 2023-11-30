@@ -64,6 +64,9 @@ public class Pizza {
 	public void setPrezzo(double prezzo) {
 		this.prezzo = prezzo;
 	}
+	public String getPrezzoFormattato() {
+		return String.format("%.2f", getPrezzo()) + "€";
+	}
 	
 	@Override
 	public String toString() {
