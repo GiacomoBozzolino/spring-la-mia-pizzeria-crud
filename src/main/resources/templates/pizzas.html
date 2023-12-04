@@ -12,11 +12,17 @@
 				<div class="container-fluid">
 					<div class="row p-5">
 						<div class="col-12">
-							<form>
-								<label for="search">SEARCH</label>
-								<input id="search" type="text" name="search" th:value="${search}">
-								<input type="submit" value="SEARCH" > 		
-							</form>
+							<div>
+								<form>
+									<label for="search">SEARCH</label>
+									<input id="search" type="text" name="search" th:value="${search}">
+									<input type="submit" value="SEARCH" > 		
+								</form>
+							</div>
+							<div>
+								<a class="btn btn-success" href="/pizzas/create">Aggiungi una nuova pizza:</a>
+							</div>
+							
 						</div>
 						<div class="col-12 text-center" th:if="${pizzas.isEmpty()}">
 							<span>Nessun elemento trovato</span>
