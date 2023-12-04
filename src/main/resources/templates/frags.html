@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css} "/>
 <title>Insert title here</title>
 </head>
 <body>
@@ -39,9 +40,9 @@
 		</div>
 		
 		
-		<div th:fragment="errorDiv(field)"
+		<div class="text-danger" th:fragment="errorDiv(field)"
 			th:if="${#fields.hasErrors(field)}">
-			<ul>
+			<ul class="list-unstyled">
 			   <li 
 			   		th:each="err : ${#fields.errors(field)}">
 			   		[[${err}]]	
